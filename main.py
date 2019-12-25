@@ -1,5 +1,6 @@
-
-import numpy as np 
+#!/usr/bin/env python3.5
+# -*- coding: utf-8 -*-
+import numpy as np
 import turtle
 import argparse
 import time
@@ -27,7 +28,7 @@ def main(window_width, window_height, num_particles, sensor_limit_ratio, grid_he
 
     time.sleep(1)
     world.show_maze()
-    
+
     while True:
 
         readings_robot = bob.read_sensor(maze = world)

@@ -7,7 +7,7 @@ University of Chicago
 dukeleimao@gmail.com
 '''
 
-import numpy as np 
+import numpy as np
 import turtle
 import bisect
 import argparse
@@ -16,13 +16,13 @@ class Maze(object):
 
     def __init__(self, grid_height, grid_width, maze = None, num_rows = None, num_cols = None, wall_prob = None, random_seed = None):
         '''
-        maze: 2D numpy array. 
-        passages are coded as a 4-bit number, with a bit value taking 
-        0 if there is a wall and 1 if there is no wall. 
-        The 1s register corresponds with a square's top edge, 
+        maze: 2D numpy array.
+        passages are coded as a 4-bit number, with a bit value taking
+        0 if there is a wall and 1 if there is no wall.
+        The 1s register corresponds with a square's top edge,
         2s register the right edge,
-        4s register the bottom edge, 
-        and 8s register the left edge. 
+        4s register the bottom edge,
+        and 8s register the left edge.
         (numpy array)
         '''
         self.grid_height = grid_height
@@ -35,7 +35,7 @@ class Maze(object):
             self.fix_maze_boundary()
             self.fix_wall_inconsistency()
         else:
-            assert num_rows is not None and num_cols is not None and wall_prob is not None, 'Parameters for random maze should not be None.' 
+            assert num_rows is not None and num_cols is not None and wall_prob is not None, 'Parameters for random maze should not be None.'
             self.random_maze(num_rows = num_rows, num_cols = num_cols, wall_prob = wall_prob, random_seed = random_seed)
 
         self.height = self.num_rows * self.grid_height
@@ -226,7 +226,7 @@ class Maze(object):
                 turtle.setheading(90 - particle.heading)
                 turtle.color(self.weight_to_color(particle.weight))
                 turtle.stamp()
-        
+
         turtle.update()
 
     def show_estimated_location(self, particles):
@@ -464,7 +464,7 @@ class Robot(Particle):
 class WeightedDistribution(object):
 
     def __init__(self, particles):
-        
+
         accum = 0.0
         self.particles = particles
         self.distribution = list()
